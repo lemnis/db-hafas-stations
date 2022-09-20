@@ -21,6 +21,9 @@ jobs:
     - run: bbox='{"north":42.1328821,"west":-9.500535,"south":36.960249,"east":-6.190214}' name="portugal" npm run build
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.0
+      with:
+        path: *.ndjson
+        name: Portugal
   luxembourg:
     runs-on: ubuntu-latest
 
@@ -35,3 +38,6 @@ jobs:
     - run: bbox='{"north":49.45,"west":5.743,"south":50.182,"east":6.517}' name="luxembourg" npm run build
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.0
+      with:
+        path: *.ndjson
+        name: Luxembourg

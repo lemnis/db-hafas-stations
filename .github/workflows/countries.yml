@@ -1,4 +1,4 @@
-name: Build
+name: Country build
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  build:
+  portugal:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,5 +20,20 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: bbox='{"north":42.1328821,"west":-9.500535,"south":36.960249,"east":-6.190214}' name="portugal" npm run build
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.0
+  luxembourg:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.x
+        cache: 'npm'
+    - run: npm ci
+    - run: npm run build --if-present
+    - run: bbox='{"north":49.45,"west":5.743,"south":50.182,"east":6.517}' name="luxembourg" npm run build
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.0

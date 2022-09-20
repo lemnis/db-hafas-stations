@@ -18,7 +18,7 @@ const fixStopsWithoutStation = (s, _, cb) => {
 	})
 }
 
-const bbox = {
+const bbox = process.env.bbox ? JSON.parse(process.env.bbox) : {
 	north: 54.888,
 	west: 5.889,
 	south: 47.188,

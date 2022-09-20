@@ -20,13 +20,13 @@ pump(
 	stations,
 	simplify(),
 	ndjson.stringify(),
-	fs.createWriteStream(path.join(__dirname, '../data.ndjson')),
+	fs.createWriteStream(path.join(__dirname, process.env.name ? `../data-${process.env.name}.ndjson` :  '../data.ndjson')),
 	showError
 )
 
 pump(
 	stations,
 	ndjson.stringify(),
-	fs.createWriteStream(path.join(__dirname, '../full.ndjson')),
+	fs.createWriteStream(path.join(__dirname,  process.env.name ? `../full-${process.env.name}.ndjson` :  '../full.ndjson')),
 	showError
 )

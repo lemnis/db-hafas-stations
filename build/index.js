@@ -10,23 +10,28 @@ const simplify = require('./simplify')
 const showError = (err) => {
 	if (!err) return
 	console.error(err)
-	process.exit(1)
+	process.exitCode = 1;
 }
 
 const stations = ndjson.parse()
-process.stdin.pipe(stations)
+process.stdin.pipe(stations);
+
+
+if (!fs.existsSync('./output')){
+    fs.mkdirSync('./output');
+}
 
 pump(
 	stations,
 	simplify(),
 	ndjson.stringify(),
-	fs.createWriteStream(path.join(__dirname, process.env.name ? `../data-${process.env.name}.ndjson` :  '../data.ndjson')),
+	fs.createWriteStream(path.join(__dirname, process.env.name ? `../output/data-${process.env.name}.ndjson` :  '../data.ndjson')),
 	showError
 )
 
 pump(
 	stations,
 	ndjson.stringify(),
-	fs.createWriteStream(path.join(__dirname,  process.env.name ? `../full-${process.env.name}.ndjson` :  '../full.ndjson')),
+	fs.createWriteStream(path.join(__dirname,  process.env.name ? `../output/full-${process.env.name}.ndjson` :  '../full.ndjson')),
 	showError
 )

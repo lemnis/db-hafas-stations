@@ -230,8 +230,12 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
+    - name: Display structure of downloaded files
+      run: ls -R
+    - name: Display structure of ouput files
+      run: ls -R output/
     - name: Download a Build Artifact
       uses: actions/download-artifact@v3.0.0
       with:
-        path: output/
+        path: ./output/
         name: ${{ matrix.country }}

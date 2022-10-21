@@ -41,7 +41,9 @@
 		"tap-min": "^2.0.0",
 		"tape": "^5.0.1",
 		"through2-concurrent": "^2.0.0",
-		"validate-fptf": "^3.0.0"
+		"validate-fptf": "^3.0.0",
+		"lemnis-discover-stations": "lemnis/hafas-discover-stations",
+		"lemnis-find-stations": "lemnis/hafas-find-stations"
 	},
 	"scripts": {
 		"lint": "eslint .",

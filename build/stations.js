@@ -1,10 +1,10 @@
 'use strict'
 
-const createWalk = require('hafas-discover-stations')
+const createWalk = require('lemnis-discover-stations')
 const omit = require('lodash/omit')
 const {promisify} = require('util')
 const {PassThrough, Transform, pipeline} = require('stream')
-const findStations = require('hafas-find-stations')
+const findStations = require('lemnis-find-stations')
 const {stringify} = require('ndjson')
 const hafas = require('./hafas')
 
@@ -27,7 +27,7 @@ const bbox = process.env.bbox ? JSON.parse(process.env.bbox) : {
 
 const abortWithError = (err) => {
 	console.error(err)
-	process.exit(1)
+	// process.exit(1)
 }
 
 const seenStopIds = new Set()

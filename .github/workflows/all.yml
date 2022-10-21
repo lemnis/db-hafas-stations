@@ -1,0 +1,276 @@
+name: Countries
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+
+jobs:
+  countries:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Original source
+        include:
+          - country: Albania
+            coordinates:
+            - 19.3
+            - 39.62
+            - 21.02
+            - 42.69
+          - country: Armenia
+            coordinates:
+              - 43.58
+              - 38.74
+              - 46.51
+              - 41.25
+          - country: Austria
+            coordinates:
+              - 9.48
+              - 46.43
+              - 16.98
+              - 49.04
+          - country: Belgium
+            coordinates:
+              - 2.51
+              - 49.53
+              - 6.16
+              - 51.48
+          - country: Bulgaria
+            coordinates:
+              - 22.38
+              - 41.23
+              - 28.56
+              - 44.23
+          - country: Bosnia and Herzegovina
+            coordinates:
+              - 15.75
+              - 42.65
+              - 19.6
+              - 45.23
+          - country: Belarus
+            coordinates:
+              - 23.2
+              - 51.32
+              - 32.69
+              - 56.17
+          - country: Switzerland
+            coordinates:
+              - 6.02
+              - 45.78
+              - 10.44
+              - 47.83
+          - country: Cyprus
+            coordinates:
+              - 32.26
+              - 34.57
+              - 34
+              - 35.17
+          - country: Czech Republic
+            coordinates:
+              - 12.24
+              - 48.56
+              - 18.85
+              - 51.12
+          - country: Germany
+            coordinates:
+              - 5.99
+              - 47.3
+              - 15.02
+              - 54.98
+          - country: Denmark
+            coordinates:
+              - 8.09
+              - 54.8
+              - 12.69
+              - 57.73
+          - country: Algeria
+            coordinates:
+              - -8.68
+              - 19.06
+              - 12
+              - 37.12
+          - country: Spain
+            coordinates:
+              - -9.39
+              - 35.95
+              - 3.04
+              - 43.75
+          - country: Estonia
+            coordinates:
+              - 23.34
+              - 57.47
+              - 28.13
+              - 59.61
+          - country: Finland
+            coordinates:
+              - 20.65
+              - 59.85
+              - 31.52
+              - 70.16
+          - country: France
+            coordinates:
+              - -5
+              - 42.5
+              - 9.56
+              - 51.15
+          - country: United Kingdom
+            coordinates:
+              - -7.57
+              - 49.96
+              - 1.68
+              - 58.64
+          - country: Greece
+            coordinates:
+              - 20.15
+              - 34.92
+              - 26.6
+              - 41.83
+          - country: Croatia
+            coordinates:
+              - 13.66
+              - 42.48
+              - 19.39
+              - 46.5
+          - country: Hungary
+            coordinates:
+              - 16.2
+              - 45.76
+              - 22.71
+              - 48.62
+          - country: Ireland
+            coordinates:
+              - -9.98
+              - 51.67
+              - -6.03
+              - 55.13
+          - country: Italy
+            coordinates:
+              - 6.75
+              - 36.62
+              - 18.48
+              - 47.12
+          - country: Lithuania
+            coordinates:
+              - 21.06
+              - 53.91
+              - 26.59
+              - 56.37
+          - country: Luxembourg
+            coordinates:
+              - 5.67
+              - 49.44
+              - 6.24
+              - 50.13
+          - country: Latvia
+            coordinates:
+              - 21.06
+              - 55.62
+              - 28.18
+              - 57.97
+          - country: Moldova
+            coordinates:
+              - 26.62
+              - 45.49
+              - 30.02
+              - 48.47
+          - country: Macedonia
+            coordinates:
+              - 20.46
+              - 40.84
+              - 22.95
+              - 42.32
+          - country: Montenegro
+            coordinates:
+              - 18.45
+              - 41.88
+              - 20.34
+              - 43.52
+          - country: Netherlands
+            coordinates:
+              - 3.31
+              - 50.8
+              - 7.09
+              - 53.51
+          - country: Norway
+            coordinates:
+              - 4.99
+              - 58.08
+              - 31.29
+              - 70.92
+          - country: Poland
+            coordinates:
+              - 14.07
+              - 49.03
+              - 24.03
+              - 54.85
+          - country: Portugal
+            coordinates:
+              - -9.53
+              - 36.84
+              - -6.39
+              - 42.28
+          - country: Romania
+            coordinates:
+              - 20.22
+              - 43.69
+              - 29.63
+              - 48.22
+          - country: Russia
+            coordinates:
+              - -180
+              - 41.15
+              - 180
+              - 81.25
+          - country: Serbia
+            coordinates:
+              - 18.83
+              - 42.25
+              - 22.99
+              - 46.17
+          - country: Slovakia
+            coordinates:
+              - 16.88
+              - 47.76
+              - 22.56
+              - 49.57
+          - country: Slovenia
+            coordinates:
+              - 13.7
+              - 45.45
+              - 16.56
+              - 46.85
+          - country: Sweden
+            coordinates:
+              - 11.03
+              - 55.36
+              - 23.9
+              - 69.11
+          - country: Turkey
+            coordinates:
+              - 26.04
+              - 35.82
+              - 44.79
+              - 42.14
+          - country: Ukraine
+            coordinates:
+              - 22.09
+              - 44.36
+              - 40.08
+              - 52.34
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.x
+        cache: 'npm'
+    - run: npm ci
+    - run: bbox='{"north":${{ matrix.coordinates.3 }},"west":${{ matrix.coordinates.0 }},"south":${{ matrix.coordinates.1 }},"east":${{ matrix.coordinates.2 }}}' name="${{ matrix.country }}" npm run build
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.0
+      with:
+        path: *.ndjson
+        name: ${{ matrix.country }}

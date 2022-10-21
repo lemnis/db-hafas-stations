@@ -8,18 +8,19 @@ on:
 
 
 jobs:
-  countries:
+  Country:
+    name: ${{ matrix.country }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         # Original source
         include:
           - country: Albania
-            coordinates:
-            - 19.3
-            - 39.62
-            - 21.02
-            - 42.69
+            west: 19.3
+            south: 39.62
+            east: 21.02
+            north: 42.69
           - country: Armenia
             west: 43.58
             south: 38.74

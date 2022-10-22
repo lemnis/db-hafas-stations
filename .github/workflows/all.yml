@@ -2,10 +2,9 @@ name: Countries
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
   pull_request:
-    branches: [ "master" ]
-
+    branches: ["master"]
 
 jobs:
   Country:
@@ -177,17 +176,29 @@ jobs:
             east: 40.08
             north: 52.34
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 14.x
-        cache: 'npm'
-    - run: npm ci
-    - run: bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
-    - name: Upload
-      if: always()
-      uses: actions/upload-artifact@v3.0.0
-      with:
-        path: ./output/
-        name: ${{ matrix.country }}
+      - uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.x
+          cache: "npm"
+      - run: npm ci
+      - run: bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          path: ./output/
+          name: ${{ matrix.country }}
+  All:
+    needs: Country
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v3.0.0
+      - name: Upload
+        if: always()
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          path: ./
+          name: Full

@@ -126,7 +126,7 @@ jobs:
             east: 7.09
             north: 53.51
           - country: Norway
-            west: 4.99
+            west: 18.1
             south: 58.08
             east: 31.29
             north: 70.92
@@ -184,6 +184,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
+      - run: node build/geojson.js ouput/full-${{ matrix.country }}.ndjson
       - name: Upload
         if: always()
         uses: actions/upload-artifact@v3.0.0

@@ -30,11 +30,6 @@ jobs:
             south: 41.23
             east: 28.56
             north: 44.23
-          - country: Belarus
-            west: 23.2
-            south: 51.32
-            east: 32.69
-            north: 56.17
           - country: Switzerland
             west: 6.02
             south: 45.78
@@ -126,9 +121,9 @@ jobs:
             east: 7.09
             north: 53.51
           - country: Norway
-            west: 18.1
+            west: 4.99
             south: 58.08
-            east: 31.29
+            east: 20
             north: 70.92
           - country: Poland
             west: 14.07

@@ -4,7 +4,7 @@ const createWalk = require('lemnis-discover-stations')
 const omit = require('lodash/omit')
 const {promisify} = require('util')
 const {PassThrough, Transform, pipeline} = require('stream')
-const findStations = require('lemnis-find-stations')
+const findStations = require('hafas-find-stations')
 const {stringify} = require('ndjson')
 const hafas = require('./hafas')
 

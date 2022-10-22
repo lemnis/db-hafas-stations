@@ -16,16 +16,6 @@ jobs:
       matrix:
         # Original source
         include:
-          - country: Albania
-            west: 19.3
-            south: 39.62
-            east: 21.02
-            north: 42.69
-          - country: Armenia
-            west: 43.58
-            south: 38.74
-            east: 46.51
-            north: 41.25
           - country: Austria
             west: 9.48
             south: 46.43
@@ -41,11 +31,6 @@ jobs:
             south: 41.23
             east: 28.56
             north: 44.23
-          - country: Bosnia and Herzegovina
-            west: 15.75
-            south: 42.65
-            east: 19.6
-            north: 45.23
           - country: Belarus
             west: 23.2
             south: 51.32
@@ -56,11 +41,6 @@ jobs:
             south: 45.78
             east: 10.44
             north: 47.83
-          - country: Cyprus
-            west: 32.26
-            south: 34.57
-            east: 34
-            north: 35.17
           - country: Czech Republic
             west: 12.24
             south: 48.56
@@ -76,21 +56,11 @@ jobs:
             south: 54.8
             east: 12.69
             north: 57.73
-          - country: Algeria
-            west: -8.68
-            south: 19.06
-            east: 12
-            north: 37.12
           - country: Spain
             west: -9.39
             south: 35.95
             east: 3.04
             north: 43.75
-          - country: Estonia
-            west: 23.34
-            south: 57.47
-            east: 28.13
-            north: 59.61
           - country: Finland
             west: 20.65
             south: 59.85
@@ -111,11 +81,6 @@ jobs:
             south: 34.92
             east: 26.6
             north: 41.83
-          - country: Croatia
-            west: 13.66
-            south: 42.48
-            east: 19.39
-            north: 46.5
           - country: Hungary
             west: 16.2
             south: 45.76
@@ -141,11 +106,6 @@ jobs:
             south: 49.44
             east: 6.24
             north: 50.13
-          - country: Latvia
-            west: 21.06
-            south: 55.62
-            east: 28.18
-            north: 57.97
           - country: Moldova
             west: 26.62
             south: 45.49
@@ -186,11 +146,6 @@ jobs:
             south: 43.69
             east: 29.63
             north: 48.22
-          - country: Russia
-            west: -180
-            south: 41.15
-            east: 180
-            north: 81.25
           - country: Serbia
             west: 18.83
             south: 42.25
@@ -230,11 +185,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
-    - name: Display structure of downloaded files
-      run: ls -R
-    - name: Display structure of ouput files
-      run: ls -R output/
     - name: Upload
+      if: always()
       uses: actions/upload-artifact@v3.0.0
       with:
         path: ./output/

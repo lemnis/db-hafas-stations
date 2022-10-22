@@ -50,8 +50,8 @@ jobs:
             south: 54.8
             east: 12.69
             north: 57.73
-          - country: Spain
-            west: -9.39
+          - country: Iberia
+            west: -9.53
             south: 35.95
             east: 3.04
             north: 43.75
@@ -65,8 +65,8 @@ jobs:
             south: 42.5
             east: 9.56
             north: 51.15
-          - country: United Kingdom
-            west: -7.57
+          - country: British Isles
+            west: -9.98
             south: 49.96
             east: 1.68
             north: 58.64
@@ -80,11 +80,6 @@ jobs:
             south: 45.76
             east: 22.71
             north: 48.62
-          - country: Ireland
-            west: -9.98
-            south: 51.67
-            east: -6.03
-            north: 55.13
           - country: Italy
             west: 6.75
             south: 36.62
@@ -130,11 +125,6 @@ jobs:
             south: 49.03
             east: 24.03
             north: 54.85
-          - country: Portugal
-            west: -9.53
-            south: 36.84
-            east: -6.39
-            north: 42.28
           - country: Romania
             west: 20.22
             south: 43.69

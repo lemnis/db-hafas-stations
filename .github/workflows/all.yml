@@ -60,13 +60,18 @@ jobs:
             south: 59.85
             east: 31.52
             north: 70.16
-          - country: France
+          - country: North France
+            west: -5
+            south: 47.5
+            east: 8.2
+            north: 51.15
+          - country: South France
             west: -5
             south: 42.5
-            east: 9.56
-            north: 51.15
-          - country: British Isles
-            west: -9.98
+            east: 8.2
+            north: 47.5
+          - country: United Kingdom
+            west: -7.57
             south: 49.96
             east: 1.68
             north: 58.64
@@ -80,6 +85,11 @@ jobs:
             south: 45.76
             east: 22.71
             north: 48.62
+          - country: Ireland
+            west: -9.98
+            south: 51.67
+            east: -6.03
+            north: 55.13
           - country: Italy
             west: 6.75
             south: 36.62
@@ -115,6 +125,16 @@ jobs:
             south: 50.8
             east: 7.09
             north: 53.51
+          - country: North Netherlands
+            west: 3.31
+            south: 51.8
+            east: 7.25
+            north: 53.51
+          - country: South Netherlands
+            west: 3.31
+            south: 50.75
+            east: 6.24
+            north: 51.8
           - country: Norway
             west: 4.99
             south: 58.08
@@ -169,7 +189,7 @@ jobs:
           cache: "npm"
       - run: npm ci
       - run: bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
-      - run: node build/geojson.js output/full-${{ matrix.country }}.ndjson
+      - run: node build/geojson.js "output/full-${{ matrix.country }}.ndjson"
       - name: Upload
         if: always()
         uses: actions/upload-artifact@v3.0.0

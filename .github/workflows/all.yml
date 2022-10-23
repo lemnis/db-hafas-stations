@@ -120,11 +120,6 @@ jobs:
             south: 41.88
             east: 20.34
             north: 43.52
-          - country: Netherlands
-            west: 3.31
-            south: 50.8
-            east: 7.09
-            north: 53.51
           - country: North Netherlands
             west: 3.31
             south: 51.8

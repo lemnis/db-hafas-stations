@@ -8,6 +8,9 @@ const output = path.join(
 	path.parse(filePath).name + ".geojson"
 );
 
+console.log('Input:', filePath);
+console.log('Output:', output);
+
 const features = [];
 
 fs.createReadStream(filePath)

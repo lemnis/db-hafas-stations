@@ -8,8 +8,8 @@ const output = path.join(
 	path.parse(filePath).name + ".geojson"
 );
 
-console.log('Input:', filePath);
-console.log('Output:', output);
+console.log('Input:', path.resolve(filePath));
+console.log('Output:', path.resolve(output));
 
 const features = [];
 

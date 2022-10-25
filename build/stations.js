@@ -24,7 +24,7 @@ const data = new PassThrough({ objectMode: true })
 
 console.error('searching stations using hafas-find-stations')
 // Find stations with endpoint inside bounding box
-findStations(hafas, bbox, {concurrency: 10}, (err, stop) => {
+findStations(hafas, bbox, { concurrency: 10, maxTileSize: 10 }, (err, stop) => {
 	if (err) console.error(err)
 	if (stop) {
 		seenStopIds.add(stop.id)

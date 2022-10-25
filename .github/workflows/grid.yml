@@ -393,7 +393,7 @@ jobs:
           node-version: 14.x
           cache: "npm"
       - run: npm ci
-      - run: DEBUG=* bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
+      - run: bbox='{"north":${{ matrix.north }},"west":${{ matrix.west }},"south":${{ matrix.south }},"east":${{ matrix.east }}}' name="${{ matrix.country }}" npm run build
       - run: node build/geojson.js "output/full-${{ matrix.country }}.ndjson"
         if: always()
       - name: Upload

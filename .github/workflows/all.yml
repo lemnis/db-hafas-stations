@@ -45,6 +45,51 @@ jobs:
             south: 47.3
             east: 15.02
             north: 54.98
+          - country: Germany-1-1
+            west: 6
+            south: 52
+            east: 9
+            north: 54
+          - country: Germany-2-1
+            west: 9
+            south: 52
+            east: 12
+            north: 54
+          - country: Germany-3-1
+            west: 12
+            south: 52
+            east: 15
+            north: 54
+          - country: Germany-1-2
+            west: 6
+            south: 50
+            east: 9
+            north: 52
+          - country: Germany-2-2
+            west: 9
+            south: 50
+            east: 12
+            north: 52
+          - country: Germany-3-2
+            west: 12
+            south: 50
+            east: 15
+            north: 52
+          - country: Germany-1-3
+            west: 6
+            south: 48
+            east: 9
+            north: 50
+          - country: Germany-2-3
+            west: 9
+            south: 48
+            east: 12
+            north: 50
+          - country: Germany-3-3
+            west: 12
+            south: 48
+            east: 15
+            north: 50
           - country: Denmark
             west: 8.09
             south: 54.8
@@ -66,7 +111,7 @@ jobs:
             east: 8.2
             north: 51.15
           - country: South France
-            west: -5
+            west: -2.6
             south: 42.5
             east: 8.2
             north: 47.5
@@ -103,8 +148,8 @@ jobs:
           - country: Luxembourg
             west: 5.67
             south: 49.44
-            east: 6.24
-            north: 50.13
+            east: 6.53
+            north: 50.18
           - country: Moldova
             west: 26.62
             south: 45.49

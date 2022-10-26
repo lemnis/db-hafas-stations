@@ -72,7 +72,7 @@ jobs:
             east: 10.05278768891236
           - country: 20-1
             west: 4.503242829348854
-            south: 45
+            south: 43.866015356441594
             north: 48.36261717506429
             east: 7
           - country: 20-2-1
@@ -96,11 +96,6 @@ jobs:
             north: 46.5
             east: 10.05278768891236
           - country: 20-3
-            west: 4.503242829348854
-            south: 43.866015356441594
-            north: 45
-            east: 7
-          - country: 20-4
             west: 7
             south: 43.866015356441594
             north: 45
@@ -140,16 +135,11 @@ jobs:
             south: 52.85921899368698
             north: 55
             east: 10.05278768891236
-          - country: 23-scandinavia
-            west: 4.503242829348854
-            south: 57.35582081230967
-            north: 66.34902444955506
-            east: 10.05278768891236
           - country: 25-italy
             west: 10.05278768891236
             south: 34.872811719196214
             north: 43.866015356441594
-            east: 15.602332548475868
+            east: 21.151877408039375
           - country: 27-1
             west: 10.05278768891236
             south: 45.5
@@ -170,25 +160,85 @@ jobs:
             south: 43.866015356441594
             north: 45.5
             east: 15.602332548475868
-          - country: 28-1
+          - country: 28-1-1
             west: 10.05278768891236
-            south: 50.5
+            south: 51.75
+            north: 52.85921899368698
+            east: 11.25
+          - country: 28-1-2
+            west: 11.25
+            south: 51.75
             north: 52.85921899368698
             east: 12.5
-          - country: 28-2
-            west: 12.5
+          - country: 28-1-3
+            west: 10.05278768891236
             south: 50.5
+            north: 51.75
+            east: 11.25
+          - country: 28-1-4
+            west: 11.25
+            south: 50.5
+            north: 51.75
+            east: 12.5
+          - country: 28-2-1
+            west: 12.5
+            south: 51.5
+            north: 52.85921899368698
+            east: 14
+          - country: 28-2-2
+            west: 14
+            south: 51.5
             north: 52.85921899368698
             east: 15.602332548475868
-          - country: 28-3
+          - country: 28-2-3
+            west: 12.5
+            south: 51.5
+            north: 52.85921899368698
+            east: 14
+          - country: 28-2-4
+            west: 14
+            south: 51.5
+            north: 52.85921899368698
+            east: 15.602332548475868
+          - country: 28-3-1
             west: 10.05278768891236
-            south: 48.36261717506429
+            south: 49.5
+            north: 50.5
+            east: 11.25
+          - country: 28-3-2
+            west: 11.25
+            south: 49.5
             north: 50.5
             east: 12.5
-          - country: 28-4
+          - country: 28-3-3
+            west: 10.05278768891236
+            south: 48.36261717506429
+            north: 49.5
+            east: 11.25
+          - country: 28-3-4
+            west: 11.25
+            south: 48.36261717506429
+            north: 49.5
+            east: 12.5
+          - country: 28-4-1
+            west: 12.5
+            south: 49.5
+            north: 50.5
+            east: 14
+          - country: 28-4-2
+            west: 14
+            south: 49.5
+            north: 50.5
+            east: 15.602332548475868
+          - country: 28-4-3
             west: 12.5
             south: 48.36261717506429
-            north: 50.5
+            north: 49.5
+            east: 14
+          - country: 28-4-4
+            west: 14
+            south: 48.36261717506429
+            north: 49.5
             east: 15.602332548475868
           - country: 29-1
             west: 10.05278768891236
@@ -210,10 +260,25 @@ jobs:
             south: 54
             north: 55
             east: 12.5
-          - country: 29-3-3
+          - country: 29-3-3-1
+            west: 10.05278768891236
+            south: 53.4
+            north: 54
+            east: 10.65
+          - country: 29-3-3-2
+            west: 10.65
+            south: 53.4
+            north: 54
+            east: 11.25
+          - country: 29-3-3-3
             west: 10.05278768891236
             south: 52.85921899368698
-            north: 54
+            north: 53.4
+            east: 10.65
+          - country: 29-3-3-4
+            west: 10.65
+            south: 52.85921899368698
+            north: 53.4
             east: 11.25
           - country: 29-3-4
             west: 11.25
@@ -240,16 +305,6 @@ jobs:
             south: 52.85921899368698
             north: 54
             east: 15.602332548475868
-          - country: 30-scandinavia
-            west: 10.05278768891236
-            south: 57.35582081230967
-            north: 70.84562626817775
-            east: 15.602332548475868
-          - country: 33-italy
-            west: 15.602332548475868
-            south: 34.872811719196214
-            north: 43.866015356441594
-            east: 21.151877408039375
           - country: 35
             west: 15.602332548475868
             south: 43.866015356441594
@@ -265,17 +320,12 @@ jobs:
             south: 52.85921899368698
             north: 57.35582081230967
             east: 21.151877408039375
-          - country: 38-scandinavia
-            west: 15.602332548475868
-            south: 57.35582081230967
-            north: 70.84562626817775
-            east: 21.151877408039375
           - country: 41-greece
             west: 21.151877408039375
             south: 34.872811719196214
             north: 43.866015356441594
             east: 26.701422267602883
-          - country: 43
+          - country: 43-romania
             west: 21.151877408039375
             south: 43.866015356441594
             north: 48.36261717506429
@@ -285,33 +335,18 @@ jobs:
             south: 48.36261717506429
             north: 57.35582081230967
             east: 26.701422267602883
-          - country: 46-scandinavia
-            west: 21.151877408039375
-            south: 57.35582081230967
-            north: 70.84562626817775
-            east: 26.701422267602883
-          - country: 49-black-sea
-            west: 26.701422267602883
-            south: 34.872811719196214
-            north: 52.85921899368698
-            east: 32.25096712716639
-          - country: 54-scandinavia
-            west: 26.701422267602883
+          - country: scandinavia
+            west: 4.503242829348854
             south: 57.35582081230967
             north: 70.84562626817775
             east: 32.25096712716639
-          - country: 57-turkey
-            west: 32.25096712716639
-            south: 34.872811719196214
-            north: 43.866015356441594
-            east: 37.800511986729894
-          - country: 59-ukraine
-            west: 32.25096712716639
+          - country: ukraine
+            west: 26.701422267602883
             south: 43.866015356441594
             north: 52.85921899368698
             east: 37.800511986729894
-          - country: 65-turkey
-            west: 37.800511986729894
+          - country: turkey
+            west: 26.701422267602883
             south: 34.872811719196214
             north: 39.3694135378189
             east: 48.8996017058569

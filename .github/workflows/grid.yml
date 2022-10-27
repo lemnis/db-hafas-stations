@@ -15,7 +15,7 @@ jobs:
       matrix:
         # Original source
         include:
-          - country: 1-iberia
+          - country: iberia
             west: -10
             south: 34.872811719196214
             north: 43.866015356441594
@@ -58,11 +58,6 @@ jobs:
           - country: 15
             west: -1.0463020302146528
             south: 48.36261717506429
-            north: 52.85921899368698
-            east: 4.503242829348854
-          - country: 16
-            west: -1.0463020302146528
-            south: 52.85921899368698
             north: 57.35582081230967
             east: 4.503242829348854
           - country: 19
@@ -70,8 +65,23 @@ jobs:
             south: 38.8
             north: 43.866015356441594
             east: 10.05278768891236
-          - country: 20-1
+          - country: 20-1-1
             west: 4.503242829348854
+            south: 43.866015356441594
+            north: 48.36261717506429
+            east: 5.75
+          - country: 20-1-2
+            west: 5.75
+            south: 43.866015356441594
+            north: 48.36261717506429
+            east: 7
+          - country: 20-1-3
+            west: 4.503242829348854
+            south: 43.866015356441594
+            north: 48.36261717506429
+            east: 5.75
+          - country: 20-1-4
+            west: 5.75
             south: 43.866015356441594
             north: 48.36261717506429
             east: 7
@@ -80,9 +90,24 @@ jobs:
             south: 46.5
             north: 48.36261717506429
             east: 8.5
-          - country: 20-2-2
+          - country: 20-2-2-1
             west: 8.5
             south: 46.5
+            north: 47.9
+            east: 9.25
+          - country: 20-2-2-2
+            west: 8.5
+            south: 47.9
+            north: 48.36261717506429
+            east: 9.25
+          - country: 20-2-2-3
+            west: 9.25
+            south: 46.5
+            north: 47.9
+            east: 10.05278768891236
+          - country: 20-2-2-4
+            west: 9.25
+            south: 47.9
             north: 48.36261717506429
             east: 10.05278768891236
           - country: 20-2-3
@@ -105,10 +130,25 @@ jobs:
             south: 50
             north: 52.85921899368698
             east: 7
-          - country: 21-2
+          - country: 21-2-1
+            west: 7
+            south: 51.4
+            north: 52.85921899368698
+            east: 8.5
+          - country: 21-2-1
             west: 7
             south: 50
+            north: 51.4
+            east: 8.5
+          - country: 21-2-3
+            west: 8.5
+            south: 51.4
             north: 52.85921899368698
+            east: 10.05278768891236
+          - country: 21-2-4
+            west: 8.5
+            south: 50
+            north: 51.4
             east: 10.05278768891236
           - country: 21-3
             west: 7
@@ -182,23 +222,23 @@ jobs:
             east: 12.5
           - country: 28-2-1
             west: 12.5
-            south: 51.5
+            south: 51.75
             north: 52.85921899368698
             east: 14
           - country: 28-2-2
             west: 14
-            south: 51.5
+            south: 51.75
             north: 52.85921899368698
             east: 15.602332548475868
           - country: 28-2-3
             west: 12.5
-            south: 51.5
-            north: 52.85921899368698
+            south: 50.5
+            north: 51.75
             east: 14
           - country: 28-2-4
             west: 14
-            south: 51.5
-            north: 52.85921899368698
+            south: 50.5
+            north: 51.75
             east: 15.602332548475868
           - country: 28-3-1
             west: 10.05278768891236
